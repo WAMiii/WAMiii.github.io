@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+<title>WAMiii&#39;s Blog-Quiet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/image/005-browser-3.png">
+
+<meta name="keywords" content="WAMiii,Blogs">
+<meta name="description" content="描述">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+	<meta name="generator" content="Hexo 5.4.0"></head>
+
+	<body>
+		
+<link rel="stylesheet" href="/css/page.css">
+
+
+<link rel="stylesheet" href="/css/page_cente.css">
+
+
+<link rel="stylesheet" href="/css/atom-one-dark.css">
+
+
+<link rel="stylesheet" href="/css/header.css">
+
+	<div class="header">
+		<div class="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.jpg" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>WAMiii</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/qiaobug">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'
+    style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'>
+</div>
+<style>
+    .sidebar {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815)
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $(function () { $('.h-right-close>svg').click(function () { $('.sidebar').animate({ width: "66%" }, 500); $('.shelter').fadeIn("slow") }); $('.shelter').click(function (e) { $('.sidebar').animate({ width: "0" }, 500); $('.shelter').fadeOut("slow") }) })
+</script>
+		<script>
+			$(function () { $(window).scroll(function () { if ($(document).scrollTop() > 100) { $(".header-top").removeClass("header-move2"); $('.header-top').addClass('header-move1') } else { $(".header-top").removeClass("header-move1"); $('.header-top').addClass('header-move2') } }) });
+		</script>
+<div class="header-bg ">
+    <div class="bg-content">
+        <ul class="tag">
+            
+        </ul>
+        <h1></h1>
+        <div class="article-info">
+            <div class="article-author">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <g>
+                        <path fill="#12183A"
+                            d="M6.187 15.265A6.47 6.47 0 0 0 10 16.5a6.47 6.47 0 0 0 3.813-1.235A4.99 4.99 0 0 0 10 13.5a4.99 4.99 0 0 0-3.813 1.765zM5.082 14.25A6.485 6.485 0 0 1 10 12c1.965 0 3.726.872 4.918 2.25a6.5 6.5 0 1 0-9.836 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                        </path>
+                    </g>
+                </svg>
+                
+                <span> <a href="">WAMiii</a></span>
+                <p>2021-07-18 21:50:54</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="article-content">
+    <div id="article" class="content">
+        <h1 id="一、数据定义"><a href="#一、数据定义" class="headerlink" title="一、数据定义"></a>一、数据定义</h1><h3 id="1-函数返回值问题"><a href="#1-函数返回值问题" class="headerlink" title="(1).函数返回值问题"></a>(1).函数返回值问题</h3><p>在函数有多个返回值时，<strong>只要有一个返回值有指定命名，其他的也必须有命名</strong>。 </p>
+<p>如果返回值有有<strong>多个返回值</strong>必须加上<strong>括号</strong>； </p>
+<p>如果<strong>只有一个返回值</strong>并且有<strong>命名</strong>也需要加上<strong>括号</strong>；</p>
+<h3 id="2-结构体比较问题"><a href="#2-结构体比较问题" class="headerlink" title="(2).结构体比较问题"></a>(2).结构体比较问题</h3><p><strong>结构体比较规则注意1</strong>：</p>
+<p>只有相同类型的结构体才可以比较，结构体是否相同不但与属性类型个数有关，还与属性顺序相关.</p>
+<p><strong>结构体比较规则注意2</strong>：</p>
+<p>结构体是相同的，但是结构体属性中有不可以比较的类型，如<code>map</code>,<code>slice</code>，则结构体不能用<code>==</code>比较。</p>
+<h3 id="3-string与nil类型"><a href="#3-string与nil类型" class="headerlink" title="(3).string与nil类型"></a>(3).string与nil类型</h3><p><strong>nil 可以用作 interface、function、pointer、map、slice 和 channel 的“空值”。其他类型不可以</strong></p>
+<p>但是如果不特别指定的话，Go 语言不能识别类型，所以会报错。</p>
+<h3 id="4-常量"><a href="#4-常量" class="headerlink" title="(4) 常量"></a>(4) 常量</h3><p>常量不同于变量的在<strong>运行期分配内存</strong>，常量通常会<strong>被编译器在预处理阶段直接展开</strong>，<strong>作为指令数据使用</strong></p>
+<h4 id="A-数据类型本质："><a href="#A-数据类型本质：" class="headerlink" title="A.数据类型本质："></a>A.数据类型本质：</h4><p> 固定内存大小的别名</p>
+<h4 id="B-数据类型的作用："><a href="#B-数据类型的作用：" class="headerlink" title="B. 数据类型的作用："></a>B. 数据类型的作用：</h4><p> 编译器预算对象(变量)分配的内存空间大小。</p>
+<h4 id="C-内存四区"><a href="#C-内存四区" class="headerlink" title="C. 内存四区"></a>C. 内存四区</h4><p>流程说明</p>
+<p>1、操作系统把物理硬盘代码load到内存</p>
+<p>2、操作系统把c代码分成四个区</p>
+<p>3、操作系统找到main函数入口执行</p>
+<h2 id="内存地址划分"><a href="#内存地址划分" class="headerlink" title="内存地址划分"></a>内存地址划分</h2><h5 id="栈区-Stack-："><a href="#栈区-Stack-：" class="headerlink" title="栈区(Stack)："></a>栈区(Stack)：</h5><p> <strong>空间较小，要求数据读写性能高</strong>，数据存放时间较短暂。<strong>由编译器自动分配和释放</strong>，存放函数的参数值、函数的调用流程方法地址、局部变量等(局部变量如果产生逃逸现象，可能会挂在在堆区)</p>
+<h5 id="堆区-heap"><a href="#堆区-heap" class="headerlink" title="堆区(heap):"></a>堆区(heap):</h5><p> <strong>空间充裕</strong>，数据存放时间较久。<strong>一般由开发者分配及释放</strong>(但是Golang中<strong>会根据变量的逃逸现象</strong>来选择是否分配到栈上或堆上)，启动Golang的<strong>GC由GC清除机制自动回收</strong>。</p>
+<h5 id="全局区-静态全局变量区"><a href="#全局区-静态全局变量区" class="headerlink" title="全局区-静态全局变量区:"></a>全局区-静态全局变量区:</h5><p> 全局变量的开辟是在程序在<code>main</code>之前就已经放在内存中。而且对外完全可见。即作用域在全部代码中，任何同包代码均可随时使用，在变量会搞混淆，而且在局部函数中如果同名称变量使用<code>:=</code>赋值会出现编译错误。</p>
+<p> <strong>全局变量最终在进程退出时，由操作系统回收</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 我么在开发的时候，尽量减少使用全局变量的设计</span><br></pre></td></tr></table></figure>
+
+<h5 id="全局区-常量区："><a href="#全局区-常量区：" class="headerlink" title="全局区-常量区："></a>全局区-常量区：</h5><p> 常量区也归属于全局区，<strong>常量为存放数值字面值单位，即不可修改</strong>。或者说的有的常量是直接挂钩字面值的。</p>
+<p><strong>不可以获取常量地址</strong></p>
+<h2 id="程序内存地址划分"><a href="#程序内存地址划分" class="headerlink" title="程序内存地址划分"></a>程序内存地址划分</h2><p>栈</p>
+<p>堆</p>
+<p>数据段</p>
+<p>代码段</p>
+<p><img src="https://img-blog.csdnimg.cn/20200520193909394.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NvbG9yZnVsX2xpZ2h0cw==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h1 id="二、数组和切片"><a href="#二、数组和切片" class="headerlink" title="二、数组和切片"></a>二、数组和切片</h1><h2 id="1-切片的初始化与追加"><a href="#1-切片的初始化与追加" class="headerlink" title="(1) 切片的初始化与追加"></a>(1) 切片的初始化与追加</h2><p>切片追加, make初始化均为0</p>
+<h2 id="2-slice拼接问题"><a href="#2-slice拼接问题" class="headerlink" title="(2) slice拼接问题"></a>(2) slice拼接问题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s1 = append(s1, s2...)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-slice中new的使用"><a href="#3-slice中new的使用" class="headerlink" title="(3) slice中new的使用"></a>(3) slice中new的使用</h2><p><strong>new和make的区别：</strong> </p>
+<p>二者都是内存的分配（堆上），</p>
+<p><strong>make只用于slice、map以及channel的初始化（非零值）；</strong></p>
+<p><strong>new用于类型的内存分配，并且内存置为零。</strong></p>
+<p> make返回的还是这三个引用类型本身；而new返回的是指向类型的指针。</p>
+<h2 id="4-slice结构"><a href="#4-slice结构" class="headerlink" title="(4) slice结构"></a>(4) slice结构</h2><p><img src="..%5Cassets%5Cimage-20210316164545189.png" alt="image-20210316164545189"></p>
+<p><strong>data 元素存储位置</strong></p>
+<p><strong>len  存储元素长度</strong></p>
+<p><strong>cap 可以存储元素空间大小</strong></p>
+<p><strong>slice元素需要存储在一块连续的内存中，实际就是个数组，data为数组起始元素的地址</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var ints []int </span><br><span class="line">ps := new ([]string)</span><br><span class="line">// 只分配了切片，没有分配数组</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-slice扩容"><a href="#5-slice扩容" class="headerlink" title="(5) slice扩容"></a>(5) slice扩容</h2><h3 id="1-slice预估规则-newCap多少"><a href="#1-slice预估规则-newCap多少" class="headerlink" title="1.slice预估规则 newCap多少"></a>1.slice预估规则 newCap多少</h3><p><img src="..%5Cassets%5Cimage-20210316163522020.png" alt="image-20210316163522020"></p>
+<h3 id="2-slice扩容规则-newCap需要多大内存"><a href="#2-slice扩容规则-newCap需要多大内存" class="headerlink" title="2.slice扩容规则 newCap需要多大内存"></a>2.slice扩容规则 newCap需要多大内存</h3><p><img src="..%5Cassets%5Cimage-20210316165840778.png" alt="image-20210316165840778"></p>
+<h3 id="3-匹配合适的内存"><a href="#3-匹配合适的内存" class="headerlink" title="3.匹配合适的内存"></a>3.匹配合适的内存</h3><p>内存管理中内存的单位是页, 一般4 KB模块，但是4KB对于切片来说太大了， 分配一页，会产生大量碎片， 于是又slab算法，提前向OS申请一批内存，分成常用的规格管理起来（2B，4B，8B，16…),申请内存时，匹配足够大且最接近规格的内存</p>
+<h1 id="三、Map"><a href="#三、Map" class="headerlink" title="三、Map"></a>三、Map</h1><h2 id="1-Map的Value赋值"><a href="#1-Map的Value赋值" class="headerlink" title="(1) Map的Value赋值"></a>(1) Map的Value赋值</h2><p><code>map[string]Student</code> 的value是一个Student结构值，所以当<code>list[&quot;student&quot;] = student</code>,是一个值拷贝过程。而<code>list[&quot;student&quot;]</code>则是一个值引用。那么值引用的特点是<code>只读</code>。所以对<code>list[&quot;student&quot;].Name = &quot;LDB&quot;</code>的修改是不允许的。</p>
+<h2 id="2-map的遍历赋值"><a href="#2-map的遍历赋值" class="headerlink" title="(2) map的遍历赋值"></a>(2) map的遍历赋值</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//将数组依次添加到map中</span><br><span class="line">    for _, stu := range stus &#123;</span><br><span class="line">        m[stu.Name] = &amp;stu</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>foreach中，stu是结构体的一个拷贝副本，所以<code>m[stu.Name]=&amp;stu</code>实际上一致指向同一个指针， 最终该指针的值为遍历的最后一个<code>struct的值拷贝</code></p>
+<h3 id="正确写法"><a href="#正确写法" class="headerlink" title="正确写法"></a>正确写法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 遍历结构体数组，依次赋值给map</span><br><span class="line">   for i := 0; i &lt; len(stus); i++  &#123;</span><br><span class="line">       m[stus[i].Name] = &amp;stus[i]</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-map的底层实现原理"><a href="#3-map的底层实现原理" class="headerlink" title="(3) map的底层实现原理"></a>(3) map的底层实现原理</h2><p>map 通过<strong>bucket</strong>来存储的 <strong>key/value</strong>，通过<strong>哈希函数</strong> 散列到不同桶中</p>
+<h3 id="散列方法"><a href="#散列方法" class="headerlink" title="散列方法"></a>散列方法</h3><p><strong>m为 2的N次方</strong></p>
+<p><img src="..%5Cassets%5Cimage-20210314122921540.png" alt="image-20210314122921540"></p>
+<h3 id="哈希冲突：两个键值对选择相同的桶"><a href="#哈希冲突：两个键值对选择相同的桶" class="headerlink" title="哈希冲突：两个键值对选择相同的桶"></a>哈希冲突：两个键值对选择相同的桶</h3><p><strong>解决方法</strong></p>
+<p><strong>1.开放地址法:</strong></p>
+<ul>
+<li>插入：当前哈希表写入新的数据时发生了冲突，就会将键值对写入到下一个不为空的位置；</li>
+<li>查找：找到对应key会继续查找后面的元素，直到内存为空或者找到目标元素；</li>
+</ul>
+<p><strong>2.拉链法：</strong> <strong>会降低读写效率</strong></p>
+<ul>
+<li>数组+链表/红黑树； 将冲突的桶对链到后面</li>
+<li>自动扩容；</li>
+</ul>
+<p><strong>选择合适的散列函数，适时对哈希表进行扩容也是保障读写效率的有效手段</strong></p>
+<p>count 键值对的数量</p>
+<p>m 为桶的数量</p>
+<h3 id="负载因子-：count-m-存储数量与桶的比值"><a href="#负载因子-：count-m-存储数量与桶的比值" class="headerlink" title="负载因子 ：count/m   存储数量与桶的比值"></a>负载因子 ：count/m   存储数量与桶的比值</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> hmap <span class="keyword">struct</span> &#123;</span><br><span class="line">        count     <span class="keyword">int</span>   </span><br><span class="line">        flags     <span class="keyword">uint8</span>   <span class="comment">//状态标示：iterator  = 1，oldIterator = 2，hashWriting = 4，sameSizeGrow = 8；</span></span><br><span class="line">        B         <span class="keyword">uint8</span>    <span class="comment">//桶的个数=2^B</span></span><br><span class="line">        noverflow <span class="keyword">uint16</span>   <span class="comment">//当前溢出桶的个数，B&lt;16时为精确值，否则为近似值；</span></span><br><span class="line">        hash0     <span class="keyword">uint32</span> </span><br><span class="line"></span><br><span class="line">        buckets    unsafe.Pointer </span><br><span class="line">        oldbuckets unsafe.Pointer <span class="comment">// 扩容时保存老的桶；</span></span><br><span class="line">        nevacuate  <span class="keyword">uintptr</span> <span class="comment">//下次扩容是旧桶偏移编号</span></span><br><span class="line"></span><br><span class="line">        extra *mapextra  <span class="comment">// 记录溢出桶的信息</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> mapextra <span class="keyword">struct</span> &#123;</span><br><span class="line">    overflow    *[]*bmap <span class="comment">//没有指针时，溢出桶挂在这；</span></span><br><span class="line">    oldoverflow *[]*bmap <span class="comment">// 在扩容阶段存储旧桶的位置</span></span><br><span class="line">    nextOverflow *bmap <span class="comment">// map初始化时，预分配了一些溢出桶；</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// bucket桶的结构，一个桶可以放8个键值对</span></span><br><span class="line"><span class="keyword">type</span> bmap <span class="keyword">struct</span> &#123;</span><br><span class="line">    topbits  [<span class="number">8</span>]<span class="keyword">uint8</span>   <span class="comment">//每个key哈希值的高8位，加速访问；</span></span><br><span class="line">    keys     [<span class="number">8</span>]keytype <span class="comment">//先key后value，节省内存；</span></span><br><span class="line">    values   [<span class="number">8</span>]valuetype</span><br><span class="line">    pad      <span class="keyword">uintptr</span></span><br><span class="line">    overflow <span class="keyword">uintptr</span>  <span class="comment">//指向一个溢出桶</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="..%5Cassets%5Cimage-20210314203640856.png" alt="image-20210314203640856"></p>
+<p>当B&gt;5时，会默认使用溢出桶的可能性比较大，预分配 2 ^(B - 4 )个桶</p>
+<h3 id="扩容机制"><a href="#扩容机制" class="headerlink" title="扩容机制"></a>扩容机制</h3><p><img src="..%5Cassets%5Cimage-20210314204459493.png" alt="image-20210314204459493"></p>
+<p><strong>等量扩容：一般当一个map中大量键值对删除，造成溢出桶过多，会触发等量扩容，将原溢出桶内的数据迁移到新桶，使得桶内数据更加紧凑。</strong></p>
+<h1 id="四、-string"><a href="#四、-string" class="headerlink" title="四、 string"></a>四、 string</h1><p><strong>string类型构成包括一个data部分 一个len部分</strong>，data部分由字节数组来实现，所以返回len是字节的长度，不是字符的长度。</p>
+<p><strong>go语言会把string类型分配到只读内存段，所有不允许修改</strong>。</p>
+<p>修改通过转换成字节数组 或者 rune数组（int32类型，对应utf-8编码），通过修改数组内字段，在转换成string类型</p>
+<p>一个ascii编码占一个字节，一个中文占3个字节</p>
+<p>例： str := “a中”  共占4个字节</p>
+<p><img src="..%5Cassets%5Cimage-20210314215423285.png" alt="image-20210314215423285"></p>
+<p><img src="..%5Cassets%5Cimage-20210314220636634.png" alt="image-20210314220636634"></p>
+<h1 id="五、函数"><a href="#五、函数" class="headerlink" title="五、函数"></a>五、函数</h1><h2 id="struct的方法调用"><a href="#struct的方法调用" class="headerlink" title="struct的方法调用"></a>struct的方法调用</h2><p>对象的方法调用相当于普通函数调用的语法糖。</p>
+<p>Value方法的调用<code>m.Value()</code>等价于<code>func Value(m M)</code> 即把<strong>对象实例m</strong>作为函数调用的第一个实参压栈，这时m称为<strong>receiver</strong>。通过实例或实例的指针其实都可以调用所有方法，区别是复制给函数的receiver不同。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> A <span class="keyword">struct</span> &#123;</span><br><span class="line">	name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(a A)</span><span class="title">Name</span><span class="params">( s <span class="keyword">string</span>)</span> <span class="title">string</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> a.name+s</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	a := A&#123;name: <span class="string">&quot;sdsd&quot;</span>&#125;</span><br><span class="line">	fmt.Println(a.Name(<span class="string">&quot;+a&quot;</span>))</span><br><span class="line">	fmt.Println(A.Name(a,<span class="string">&quot;+a&quot;</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数类型（函数签名）、函数声明"><a href="#函数类型（函数签名）、函数声明" class="headerlink" title="函数类型（函数签名）、函数声明"></a>函数类型（函数签名）、函数声明</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数类型（签名）</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(<span class="keyword">int</span>)</span> <span class="title">int</span></span></span><br><span class="line"><span class="comment">// 函数声明 = 函数名+ 函数类型</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Name</span><span class="params">(<span class="keyword">int</span>)</span> <span class="title">int</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="函数的执行是一个栈结构，依次将调用的函数入栈"><a href="#函数的执行是一个栈结构，依次将调用的函数入栈" class="headerlink" title="函数的执行是一个栈结构，依次将调用的函数入栈"></a>函数的执行是一个栈结构，依次将调用的函数入栈</h2><p><img src="..%5Cassets%5Cimage-20210321150059023.png" alt="image-20210321150059023"></p>
+<h3 id="函数栈帧包括"><a href="#函数栈帧包括" class="headerlink" title="函数栈帧包括"></a>函数栈帧包括</h3><p>​    <strong>调用者栈基bp</strong></p>
+<p>​    局部变量区  （从左往右存）</p>
+<p>​    参数区           （从右往左存）</p>
+<p>​    返回值区</p>
+<h3 id="返回地址"><a href="#返回地址" class="headerlink" title="返回地址"></a>返回地址</h3><p>​    两个函数栈直接包括一个<strong>返回地址</strong>，记录上一个函数执行完毕后的返回地址</p>
+<p>​    <strong>函数调用另一个函数，是通过返回地址的sp栈指针+偏移量 来寻址</strong></p>
+<h1 id="六、闭包"><a href="#六、闭包" class="headerlink" title="六、闭包"></a>六、闭包</h1><h3 id="引入："><a href="#引入：" class="headerlink" title="引入："></a>引入：</h3><p><strong>函数变量Function Value:</strong></p>
+<p>函数作为参数，返回值，绑定变量的用法</p>
+<p>函数变量是一个指针，并不指向函数的入口，指向一个runtime.funVal结构体，结构体里包含一个函数指令的入口地址</p>
+<p><img src="..%5Cassets%5Cimage-20210316213737431.png" alt="image-20210316213737431"></p>
+<p><strong>函数B和C调用一个方法体，编译器会优化，让f1和f2共用一个function value结构体，保存函数A的地址</strong></p>
+<p><strong>运行f1时，会找到堆上function value的地址，取出函数A的地址进行调用</strong></p>
+<p><img src="..%5Cassets%5Cimage-20210316213951898.png" alt="image-20210316213951898"></p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包是由函数及其引用环境组合成的实体，一般<strong>通过在匿名函数中引用外部函数的局部变量或者全局变量组成</strong></p>
+<h3 id="如果函数返回的闭包引用函数的局部变量"><a href="#如果函数返回的闭包引用函数的局部变量" class="headerlink" title="如果函数返回的闭包引用函数的局部变量"></a>如果函数返回的闭包引用函数的局部变量</h3><p>1） 多个闭包，每次调用函数返回的闭包，都会为局部变量分配内存</p>
+<p>2） 同时使用一个闭包多次，如果闭包修改了调用函数的局部变量，则会多个闭包共享改变量，达到共享变量的目的</p>
+<p><strong>每个闭包会调用各自在堆上对应的functionValue结构体  存储闭包在代码段中的地址，并拷贝一份外部变量成为捕获变量，每次调用一个闭包，引用的是同一个变量，放入各自捕获列表，所以称闭包为有状态的函数</strong></p>
+<h3 id="闭包好处"><a href="#闭包好处" class="headerlink" title="闭包好处"></a>闭包好处</h3><p>减少了共享变量的使用</p>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>是的程序的可读性降低</p>
+<h3 id="闭包原理"><a href="#闭包原理" class="headerlink" title="闭包原理"></a>闭包原理</h3><p><img src="..%5Cassets%5Cimage-20210316214741475.png" alt="image-20210316214741475"></p>
+<h1 id="七、Defer"><a href="#七、Defer" class="headerlink" title="七、Defer"></a>七、Defer</h1><h2 id="defer的执行顺序"><a href="#defer的执行顺序" class="headerlink" title="defer的执行顺序"></a>defer的执行顺序</h2><p><strong>它是一个“栈”的关系，也就是先进后出</strong>。</p>
+<h2 id="defer-1-12"><a href="#defer-1-12" class="headerlink" title="defer 1.12"></a>defer 1.12</h2><h3 id="defer结构体"><a href="#defer结构体" class="headerlink" title="defer结构体"></a>defer结构体</h3><p><img src="..%5Cassets%5Cimage-20210318103724637.png" alt="image-20210318103724637"></p>
+<p><img src="..%5Cassets%5Cimage-20210323153421209.png" alt="image-20210323153421209"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A1 输出1的原因</span><br><span class="line">defer A1注册时，会将a=1拷贝到堆上，在执行defer函数栈时，在将堆上的值拷贝到栈上调用，a还是1</span><br></pre></td></tr></table></figure>
+
+
+
+<p>函数执行前defer信息会通过<strong>runtime.deferproc注册函数信息</strong>，</p>
+<p>deferproc执行时会在堆上分配一段空间，用于存放defer结构体，把函数的此时参数拷贝到堆上，</p>
+<p>函数返回前通过deferreturn执行注册的defer函数，并将之前保存的存数再拷贝到栈上执行。</p>
+<p><img src="..%5Cassets%5Cimage-20210323154050627.png" alt="image-20210323154050627"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">闭包输出a=5的原因</span><br><span class="line"></span><br><span class="line">defer函数引用外部变量a，所以是一个闭包，将a的值拷贝堆上，创建一个funcVal结构体，保存a的地址，</span><br><span class="line">在执行时，找到此时a的地址 a=3 ,将b 从堆上拷贝出，b=2 ， a = a+b = 5</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="倒叙执行原因"><a href="#倒叙执行原因" class="headerlink" title="倒叙执行原因"></a><strong>倒叙执行原因</strong></h3><p><strong>_当前执行的goroutine会持有这个链表的头指针，goroutine运行时会有一个runtime.g的结构体，有一个defer字段指向链表头，链表是一个_defer结构体，新注册的defer会添加到链表头，从头开始执行</strong></p>
+<p><img src="..%5Cassets%5Cimage-20210318103440595.png" alt="image-20210318103440595"></p>
+<h2 id="defer-1-13"><a href="#defer-1-13" class="headerlink" title="defer 1.13"></a>defer 1.13</h2><p>defer结构，添加了一个heap字段，标记是否是堆分配</p>
+<p><img src="..%5Cassets%5Cimage-20210323155353842.png" alt="image-20210323155353842"></p>
+<h2 id="defer1-14"><a href="#defer1-14" class="headerlink" title="defer1.14"></a>defer1.14</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">type _defer struct &#123;</span><br><span class="line">   siz     int32 // includes both arguments and results</span><br><span class="line">   started bool</span><br><span class="line">   heap    bool</span><br><span class="line">   // openDefer indicates that this _defer is for a frame with open-coded</span><br><span class="line">   // defers. We have only one defer record for the entire frame (which may</span><br><span class="line">   // currently have 0, 1, or more defers active).</span><br><span class="line">   openDefer bool</span><br><span class="line">   sp        uintptr  // sp at time of defer</span><br><span class="line">   pc        uintptr  // pc at time of defer</span><br><span class="line">   fn        *funcval // can be nil for open-coded defers</span><br><span class="line">   _panic    *_panic  // panic that is running defer</span><br><span class="line">   link      *_defer</span><br><span class="line"></span><br><span class="line">   // If openDefer is true, the fields below record values about the stack</span><br><span class="line">   // frame and associated function that has the open-coded defer(s). sp</span><br><span class="line">   // above will be the sp for the frame, and pc will be address of the</span><br><span class="line">   // deferreturn call in the function.</span><br><span class="line">   fd   unsafe.Pointer // funcdata for the function associated with the frame</span><br><span class="line">   varp uintptr        // value of varp for the stack frame</span><br><span class="line">   // framepc is the current pc associated with the stack frame. Together,</span><br><span class="line">   // with sp above (which is the sp associated with the stack frame),</span><br><span class="line">   // framepc/sp can be used as pc/sp pair to continue a stack trace via</span><br><span class="line">   // gentraceback().</span><br><span class="line">   framepc uintptr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="defer-1-12-1-13-1-14-改进与优化"><a href="#defer-1-12-1-13-1-14-改进与优化" class="headerlink" title="defer 1.12 1.13 1.14 改进与优化"></a>defer 1.12 1.13 1.14 改进与优化</h2><p><strong>1.12</strong> defer信息会<strong>runtime.deferproc注册函数信息，_defer结构体分配到堆上</strong>, </p>
+<p><strong>1.13</strong> 在编译阶段<strong>增加局部变量将当前函数栈的信息保存到局部变量区域</strong>，通过<strong>deferprocstack</strong>把_defer结构体注册            到链表中</p>
+<p>​        <strong>优点：减少defer信息的堆分配，适用defer函数需要调用参数的情况</strong></p>
+<p>​    （不是全部分配到栈，少量情况依然使用1.12方法， 所以_defer结构体增加了一个heap字段，标识是否用                    于堆分配）</p>
+<p><strong>1.14</strong>  open coded defer </p>
+<p>​            1.在编译阶段插入代码，会把defer函数需要的参数定义为局部变量函数执行时，把defer函数插入最后，省注册链表的过程，defer结构体构建，在函数返回前，直接调用defer函数</p>
+<p>​            2.添加一个df字节，用来表示函数中的defer是否满足defer条件</p>
+<p>​        <strong>优点：省去了defer结构体项注册到defer链表的过程（不是全部）</strong></p>
+<p>​        <strong>函数内增加了一个df字节</strong>，来标识函数内的defer函数是否要执行，函数最后会判断df是否重复执行，在执行        defer函数</p>
+<p>​        添加一个结构opendefer等字段， 解决当发生panic和runtime.GOEXIT时，通过栈扫描的方式找到未注册到链表        的defer函数</p>
+<p>​        总结，defer变快了  panic变慢了（这样优化的原因是发送panic的情况要少于defer）</p>
+<h2 id="defer与return谁先谁后"><a href="#defer与return谁先谁后" class="headerlink" title="defer与return谁先谁后"></a>defer与return谁先谁后</h2><p><strong>return之后的语句先执行，defer后的语句后执行</strong></p>
+<h2 id="函数的返回值初始化"><a href="#函数的返回值初始化" class="headerlink" title="函数的返回值初始化"></a>函数的返回值初始化</h2><p><strong>只要声明函数的返回值变量名称，就会在函数初始化时候为之赋值为0，而且在函数体作用域可见</strong>。</p>
+<h2 id="有名函数返回值遇见defer情况"><a href="#有名函数返回值遇见defer情况" class="headerlink" title="有名函数返回值遇见defer情况"></a>有名函数返回值遇见defer情况</h2><p><strong>defer 最大的功能是 panic 后依然有效，panic后面的代码不执行，只执行defer栈中方法</strong></p>
+<h2 id="defer遇见panic"><a href="#defer遇见panic" class="headerlink" title="defer遇见panic"></a>defer遇见panic</h2><p>panic也是一个链表，当一个新的panic发生时，会插入链表头</p>
+<p><img src="..%5Cassets%5Cimage-20210320212246576.png" alt="image-20210320212246576"></p>
+<h3 id="有panic-defer执行逻辑"><a href="#有panic-defer执行逻辑" class="headerlink" title="有panic defer执行逻辑"></a>有panic defer执行逻辑</h3><p>遇到panic时，标记defer链表中的panic字段，标识由当前panic触发，</p>
+<p>检验defer字段的_panic是否和当前panic一致，如果不一致，将panic字段内的abort标记为true，然后释放defer</p>
+<p>并执行下一个defer。（<strong>当defer函数中又发生panic，可以终止之前发生的panic</strong>）</p>
+<h3 id="异常信息打印"><a href="#异常信息打印" class="headerlink" title="异常信息打印"></a>异常信息打印</h3><p>按照panic的执行顺序打印，相当于从panic链表 尾部输出</p>
+<p><strong>遇到recover则停止panic，返回recover处继续往下执行。</strong></p>
+<p><strong>如果没有遇到recover，遍历完本协程的defer链表后，向stderr抛出panic信息。</strong></p>
+<h2 id="recover-defer中包含panic"><a href="#recover-defer中包含panic" class="headerlink" title="recover defer中包含panic"></a>recover defer中包含panic</h2><h3 id="recover-只把当前执行的panic的recover字段标记为true，移除当前panic并跳出"><a href="#recover-只把当前执行的panic的recover字段标记为true，移除当前panic并跳出" class="headerlink" title="recover 只把当前执行的panic的recover字段标记为true，移除当前panic并跳出"></a>recover 只把当前执行的panic的recover字段标记为true，移除当前panic并跳出</h3><h1 id="七、interface"><a href="#七、interface" class="headerlink" title="七、interface"></a>七、interface</h1><h2 id="1-interface的赋值问题"><a href="#1-interface的赋值问题" class="headerlink" title="(1) interface的赋值问题"></a>(1) interface的赋值问题</h2><p>我们知道发生多态的几个要素：</p>
+<p>1、有interface接口，并且有接口定义的方法。</p>
+<p>2、有子类去重写interface的接口。</p>
+<p>3、有父类指针指向子类的具体对象</p>
+<p>那么，满足上述3个条件，就可以产生多态效果，就是，父类指针可以调用子类的具体方法。</p>
+<p>所以上述代码报错的地方在<code>var peo People = Stduent&#123;&#125;</code>这条语句， <code>Student&#123;&#125;</code>已经重写了父类<code>People&#123;&#125;</code>中的<code>Speak(string) string</code>方法，那么只需要用父类指针指向子类对象即可。</p>
+<p>所以应该改成<code>var peo People = &amp;Student&#123;&#125;</code> 即可编译通过。（People为interface类型，就是指针类型）</p>
+<h2 id="2-空接口eface"><a href="#2-空接口eface" class="headerlink" title="(2) 空接口eface"></a>(2) 空接口eface</h2><p>空接口eface结构，由两个属性构成，一个是类型信息_type，一个是数据信息。其数据结构声明如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type eface struct &#123;      //空接口</span><br><span class="line">    _type *_type         //类型信息</span><br><span class="line">    data  unsafe.Pointer //指向数据的指针(go语言中特殊的指针类型unsafe.Pointer类似于c语言中的void*)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="type属性："><a href="#type属性：" class="headerlink" title="_type属性："></a>_type属性：</h3><p>是GO语言中所有类型的公共描述，Go语言几乎所有的数据结构都可以抽象成 _type，是所有类型的公共描述，<strong>type负责决定data应该如何解释和操作，</strong>type的结构代码如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">type _type struct &#123;</span><br><span class="line">    size       uintptr  //类型大小</span><br><span class="line">    ptrdata    uintptr  //前缀持有所有指针的内存大小</span><br><span class="line">    hash       uint32   //数据hash值</span><br><span class="line">    tflag      tflag</span><br><span class="line">    align      uint8    //对齐</span><br><span class="line">    fieldalign uint8    //嵌入结构体时的对齐</span><br><span class="line">    kind       uint8    //kind 有些枚举值kind等于0是无效的</span><br><span class="line">    alg        *typeAlg //函数指针数组，类型实现的所有方法</span><br><span class="line">    gcdata    *byte</span><br><span class="line">    str       nameOff</span><br><span class="line">    ptrToThis typeOff</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="data属性"><a href="#data属性" class="headerlink" title="data属性:"></a>data属性:</h3><p>表示指向具体的实例数据的指针，他是一个<code>unsafe.Pointer</code>类型，相当于一个C的万能指针<code>void*</code>。</p>
+<h2 id="3-非空接口iface"><a href="#3-非空接口iface" class="headerlink" title="(3) 非空接口iface"></a>(3) 非空接口iface</h2><p>表示 non-empty interface 的数据结构，非空接口初始化的过程就是初始化一个iface类型的结构，其中<code>data</code>的作用同<code>eface</code>的相同，这里不再多加描述。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">type iface struct &#123;</span><br><span class="line">  tab  *itab</span><br><span class="line">  data unsafe.Pointer</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="itab结构"><a href="#itab结构" class="headerlink" title="itab结构"></a>itab结构</h3><p>结构如下），每一个 <code>itab</code> 都占 32 字节的空间。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">type itab struct &#123;</span><br><span class="line">  inter  *interfacetype   // 接口的类型元数据</span><br><span class="line">  _type  *_type           // 接口的动态类型元数据</span><br><span class="line">  link   *itab</span><br><span class="line">  bad    int32</span><br><span class="line">  hash   int32            // _type里也有一个同样的hash，此处多放一个是为了方便运行接口断言</span><br><span class="line">  fun    [1]uintptr       // 函数指针，指向具体类型所实现的方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中值得注意的字段，个人理解如下：</p>
+<ol>
+<li><code>interface type</code>包含了一些关于interface本身的信息，比如<code>package path</code>，包含的<code>method</code>。这里的interfacetype是定义interface的一种抽象表示。</li>
+<li><code>type</code>表示具体化的类型，与eface的 <em>type类型相同。</em></li>
+<li><code>hash</code>字段其实是对<code>_type.hash</code>的拷贝，它会在interface的实例化时，用于快速判断目标类型和接口中的类型是否一致。另，Go的interface的Duck-typing机制也是依赖这个字段来实现。</li>
+<li><code>fun</code>字段其实是一个动态大小的数组，虽然声明时是固定大小为1，但在使用时会直接通过fun指针获取其中的数据，并且不会检查数组的边界，所以该数组中保存的元素数量是不确定的。</li>
+<li><strong>go语言会把已经用到的itab结构体缓存起来，<code>以&lt;interface type, concrete type&gt;</code>为key，itab结构体地址为value，构建一个哈希表runtime.itabTableType，用于存储和缓存itab信息</strong></li>
+</ol>
+<h2 id="4-inteface-与-interface"><a href="#4-inteface-与-interface" class="headerlink" title="(4) inteface{}与*interface{}"></a>(4) inteface{}与*interface{}</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*<span class="keyword">interface</span> &#123;&#125; is pointer to <span class="keyword">interface</span>, not <span class="keyword">interface</span></span><br></pre></td></tr></table></figure>
+
+<p>Golang是强类型语言，interface是所有golang类型的父类 函数中<code>func f(x interface&#123;&#125;)</code>的<code>interface&#123;&#125;</code>可以支持传入golang的任何类型，包括指针，但是函数<code>func g(x *interface&#123;&#125;)</code>只能接受<code>*interface&#123;&#125;</code></p>
+<h1 id="八、类型系统"><a href="#八、类型系统" class="headerlink" title="八、类型系统"></a>八、类型系统</h1><h2 id="类型包括-内置类型-和-自定义类型两种"><a href="#类型包括-内置类型-和-自定义类型两种" class="headerlink" title="类型包括 内置类型  和 自定义类型两种"></a>类型包括 内置类型  和 自定义类型两种</h2><p><img src="..%5Cassets%5Cimage-20210320221052989.png" alt="image-20210320221052989"></p>
+<h1 id="九、类型断言"><a href="#九、类型断言" class="headerlink" title="九、类型断言"></a>九、类型断言</h1><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="空接口-具体类型"><a href="#空接口-具体类型" class="headerlink" title="空接口.( 具体类型)"></a>空接口.( 具体类型)</h3><p>会直接比较**_type字段是否一致**</p>
+<h3 id="非空接口-具体类型"><a href="#非空接口-具体类型" class="headerlink" title="非空接口.(具体类型)"></a>非空接口.(具体类型)</h3><p> 程序中用到的itab结构体会缓存起来 ， 可以通过 <strong>接口类型 和动态类型组成的key，来查询itab是否一致</strong>，</p>
+<h3 id="空接口-非空接口-非空接口-非空接口"><a href="#空接口-非空接口-非空接口-非空接口" class="headerlink" title="空接口 .(非空接口)  非空接口.(非空接口)"></a>空接口 .(非空接口)  非空接口.(非空接口)</h3><p>会查找<strong>接口的类型</strong>与当前赋值的<strong>动态类型的itab缓存</strong>是否存在，再看<strong>fun[0] == 0，表示没有实现方法 , 如果==0 直接判断失败</strong></p>
+<p>若没有缓存，就比较类型元数据的是否实现了接口方法，没有就会缓存当前itab，并标记fun[0] = 0</p>
+<h1 id="十、反射"><a href="#十、反射" class="headerlink" title="十、反射"></a>十、反射</h1><p><strong>反射是指在程序运行期对程序本身进行访问和修改的能力</strong></p>
+<p>因为_type 结构体的属性是不对外暴露的，反射包中包含一个rtype类型 与runtime中的type类型定义相同</p>
+<p><img src="..%5Cassets%5Cimage-20210321142532092.png" alt="image-20210321142532092"></p>
+<h3 id="TypeOf函数"><a href="#TypeOf函数" class="headerlink" title="TypeOf函数"></a>TypeOf函数</h3><p>用于获取一个类型变量的类型信息</p>
+<p><img src="..%5Cassets%5Cimage-20210321142642786.png" alt="image-20210321142642786"></p>
+<p>TypeOf传递的是一个空接口类型只可以接受地址，但a是一个类型实例，所以不可以使用a的地址（因为不符合传参值拷贝的语义）</p>
+<p><strong>因此在编译阶段</strong></p>
+<p><strong>1.会增加一个临时变量eface指向对应的传递类型 ，传递eface类型，来实现传值</strong></p>
+<p>2.把传值的eface类型转换成emptyInterfac类型，拿到对应rtype</p>
+<p>3.然后会把 rtype 类型实现了Type类型接口，然后调用toType函数获取reflect.Type类型</p>
+<p><img src="..%5Cassets%5Cimage-20210321143133297.png" alt="image-20210321143133297"></p>
+<h3 id="reflect-Value"><a href="#reflect-Value" class="headerlink" title="reflect.Value"></a>reflect.Value</h3><p><strong>会把参数指向的变量逃逸到堆上，返回一个Value类型，</strong></p>
+<p>typ 指向原变量类型</p>
+<p>ptr 指向参数的拷贝地址</p>
+<p><img src="..%5Cassets%5Cimage-20210321144231069.png" alt="image-20210321144231069"></p>
+<p><strong>通过反射修改变量的值，要传递变量的地址，否则会panic（因为ValueOf函数，会拷贝参数并逃逸到堆上，堆上保存的是参数的副本，所以修改的是变量的拷贝副本的值）</strong></p>
+<p><img src="..%5Cassets%5Cimage-20210321144659245.png" alt="image-20210321144659245">t</p>
+<h1 id="十一、channel"><a href="#十一、channel" class="headerlink" title="十一、channel"></a>十一、channel</h1><h2 id="（1）Channel读写特性-15字口诀"><a href="#（1）Channel读写特性-15字口诀" class="headerlink" title="（1）Channel读写特性(15字口诀)"></a>（1）Channel读写特性(15字口诀)</h2><p>首先，我们先复习一下Channel都有哪些特性？</p>
+<ul>
+<li>给一个 nil channel 发送数据，造成永远阻塞</li>
+<li>从一个 nil channel 接收数据，造成永远阻塞</li>
+<li>给一个已经关闭的 channel 发送数据，引起 panic</li>
+<li>从一个已经关闭的 channel 接收数据，如果缓冲区中为空，则返回一个零值</li>
+<li><strong>无缓冲的channel是同步的，而有缓冲的channel是非同步的</strong></li>
+</ul>
+<h2 id="（2）channel应用场景"><a href="#（2）channel应用场景" class="headerlink" title="（2）channel应用场景"></a>（2）channel应用场景</h2><ul>
+<li>数据交流：当作并发的 buffer 或者 queue，解决生产者 - 消费者问题。多个 goroutine 可以并发当作生产者（Producer）和消费者（Consumer）。</li>
+<li>数据传递：一个goroutine将数据交给另一个goroutine，相当于把数据的拥有权托付出去。</li>
+<li>信号通知：一个goroutine可以将信号(closing，closed，data ready等)传递给另一个或者另一组goroutine。</li>
+<li>任务编排：可以让一组goroutine按照一定的顺序并发或者串行的执行，这就是编排功能。</li>
+<li>锁机制：    利用channel实现互斥机制。</li>
+</ul>
+<h2 id="（3）channel底层实现"><a href="#（3）channel底层实现" class="headerlink" title="（3）channel底层实现"></a>（3）channel底层实现</h2><p>Go依赖于称为CSP(Communicating Sequential Processes)的并发模型，通过 Channel实现这种同步模式</p>
+<h3 id="channel结构体"><a href="#channel结构体" class="headerlink" title="channel结构体"></a><strong>channel结构体</strong></h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//path:src/runtime/chan.go</span></span><br><span class="line"><span class="keyword">type</span> hchan <span class="keyword">struct</span> &#123;</span><br><span class="line">  qcount <span class="keyword">uint</span>          <span class="comment">// 当前队列列中剩余元素个数</span></span><br><span class="line">  dataqsiz <span class="keyword">uint</span>        <span class="comment">// 环形队列长度，即可以存放的元素个数</span></span><br><span class="line">  buf unsafe.Pointer   <span class="comment">// 环形队列列指针</span></span><br><span class="line">  elemsize <span class="keyword">uint16</span>      <span class="comment">// 每个元素的⼤⼩</span></span><br><span class="line">  closed <span class="keyword">uint32</span>        <span class="comment">// 标识关闭状态</span></span><br><span class="line">  elemtype *_type      <span class="comment">// 元素类型</span></span><br><span class="line">  sendx <span class="keyword">uint</span>           <span class="comment">// 队列下标，指示元素写⼊入时存放到队列列中的位置 x</span></span><br><span class="line">  recvx <span class="keyword">uint</span>           <span class="comment">// 队列下标，指示元素从队列列的该位置读出  </span></span><br><span class="line">  recvq waitq          <span class="comment">// 等待读消息的goroutine队列</span></span><br><span class="line">  sendq  waitq         <span class="comment">// 等待写消息的goroutine队列</span></span><br><span class="line">  lock mutex           <span class="comment">// 互斥锁，chan不允许并发读写</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>从数据结构可以看出<strong>channel由队列、类型信息、goroutine等待队列</strong>组成。</p>
+<p>chan内部实现了一个缓冲队列作为缓冲区，队列的长度是创建chan时指定的。</p>
+<p>下图展示了可缓存6个元素的channel示意图：</p>
+<p><img src="..%5Cassets%5Cwebp" alt="img"></p>
+<p>dataqsiz：指向队列的长度为6，即可缓存6个元素</p>
+<p>buf：指向队列的内存，</p>
+<p>qcount：当前队列中剩余的元素个数</p>
+<p>sendx：指后续写入元素的位置</p>
+<p>recvx：指从该位置读取数据</p>
+<h3 id="等待队列"><a href="#等待队列" class="headerlink" title="等待队列"></a><strong>等待队列</strong></h3><p>从channel中读数据，如果channel缓冲区为空或者没有缓冲区，当前goroutine会被阻塞；</p>
+<p>向channel中写数据，如果channel缓冲区已满或者没有缓冲区，当前goroutine会被阻塞。</p>
+<p><strong>被阻塞的goroutine将会被挂在channel的等待队列</strong>中：</p>
+<ul>
+<li>因<strong>读阻塞</strong>的goroutine会被向channel <strong>写入数据的goroutine唤醒</strong></li>
+<li>因<strong>写阻塞</strong>的goroutine会被从channel <strong>读数据的goroutine唤醒</strong></li>
+</ul>
+<p>下面展示了一个没有缓冲区的channel，有几个goroutine阻塞等待数据：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/22655349-ad3e13807ddd7e6c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1066/format/webp" alt="img"></p>
+<p>在这里插入图片描述</p>
+<p>注意，<strong>一般情况下recvq和sendq至少有一个为空。只有一个例外，那就是同一个goroutine使用select语句向channel一边写数据一边读数据。</strong></p>
+<h3 id="向channel写数据"><a href="#向channel写数据" class="headerlink" title="向channel写数据"></a>向channel写数据</h3><p><strong>流程图：</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/22655349-781e57379f470403?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="img"></p>
+<p>在这里插入图片描述</p>
+<p><strong>详细过程</strong></p>
+<ul>
+<li><p>通道加锁</p>
+</li>
+<li><p>if recvq ！= nil (有人等待读，没人写) ，</p>
+<p>​                                将元素直接写入读的goroutine，就可以把这个读goroutine唤醒</p>
+</li>
+<li><p>else   recvq == Empty，（想写，没人读，就要把数据放缓冲区）</p>
+<pre><code>                            if  缓冲区有空间  ， 把数据写入缓存buf
+</code></pre>
+<p>​                                else  没有空间，就不能发，写goroutine到sendq排队</p>
+</li>
+<li><p>写入完成释放锁</p>
+</li>
+</ul>
+<h3 id="从channel读数据"><a href="#从channel读数据" class="headerlink" title="从channel读数据"></a>从channel读数据</h3><p><strong>流程图</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/22655349-24346aabaed09adc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="img"></p>
+<p><strong>读</strong> ： 先发sendq是否有人发，</p>
+<p><strong>详细过程</strong></p>
+<ul>
+<li><p>通道加速</p>
+</li>
+<li><p>if  sendq != nil (有人发，等待写)</p>
+<p>​                            if   看是<strong>有</strong>缓冲区<strong>写通道</strong>， sendq取出一个goroutine，就可以写入缓冲区，唤醒一个写goroutine</p>
+<p>​                            else  无缓冲通道，就直接从sendq队列取一个写goroutine读，就把这个写goroutine唤醒</p>
+<p>else sendq == nil (没有人发，没法读)</p>
+<p>​                            if   qcount != 0 队列有数据要读，就从缓冲区读一个</p>
+<p>​                            else             没有要读的数据，你还有读，就只等到读队列排队</p>
+</li>
+</ul>
+<h2 id="channel注意事项"><a href="#channel注意事项" class="headerlink" title="channel注意事项"></a>channel注意事项</h2><ul>
+<li>向已经关闭的channel中写入数据会发生Panic</li>
+<li>关闭已经关闭的channel会发生Panic</li>
+<li>关闭值为nil的channel会发生Panic</li>
+</ul>
+<h1 id="十二、Sync"><a href="#十二、Sync" class="headerlink" title="十二、Sync"></a>十二、Sync</h1><h2 id="12-1WaitGroup并发控制"><a href="#12-1WaitGroup并发控制" class="headerlink" title="12.1WaitGroup并发控制"></a>12.1WaitGroup并发控制</h2><p>sync.WaitGroup内部维护着一个<strong>计数器</strong>，计数器的值可以增加和减少。</p>
+<p>例如当我们<strong>启动</strong>了N 个并发任务时，就<strong>通过Add()将计数器值增加N</strong>。</p>
+<p>每个任务<strong>完成</strong>时<strong>通过调用Done()方法将计数器减1</strong>。</p>
+<p>通过<strong>调用Wait()来等待并发任务执行完</strong>，当计数器值为0时，表示所有并发任务已经完成。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> N = <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> wg = &amp;sync.WaitGroup&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; N; i++ &#123;</span><br><span class="line">        <span class="comment">//wg.Add(1) 正确写法</span></span><br><span class="line">		<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">(i <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">			wg.Add(<span class="number">1</span>)</span><br><span class="line">			<span class="built_in">println</span>(i)</span><br><span class="line">			<span class="keyword">defer</span> wg.Done()</span><br><span class="line">		&#125;(i)</span><br><span class="line">	&#125;</span><br><span class="line">	wg.Wait()</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>结果</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">结果不唯一，代码存在风险, 所有go未必都能执行到</span><br></pre></td></tr></table></figure>
+
+<p>这是使用WaitGroup经常犯下的错误！请各位同学多次运行就会发现输出都会不同甚至又出现报错的问题。 这是因为<code>go</code>执行太快了，导致<code>wg.Add(1)</code>还没有执行main函数就执行完毕了。 </p>
+<h3 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> WaitGroup <span class="keyword">struct</span> &#123;</span><br><span class="line">   noCopy noCopy</span><br><span class="line"></span><br><span class="line">   state1 [<span class="number">3</span>]<span class="keyword">uint32</span>  <span class="comment">// uint32数组一共12个字节，前8个即uint64记录 高8位记录需要等待的数量 低8位正在等待						的数量  ，后4个字节存储信号量，用于唤醒</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>1.核心原理就是通过之前说的64位的uint64来进行计数，采用高位记录需要Done的数量，低位记录Wait的数量，然后排队休眠等待唤醒</p>
+<p> 2.如果发现当前count&gt;0则  Wait的goroutine会进行排队</p>
+<p> 3.任务完成后的goroutine则进行Done操作，直到count==0,则完成，就唤醒所有因为wait操作睡眠的goroutine</p>
+<h2 id="12-2-sync-Once"><a href="#12-2-sync-Once" class="headerlink" title="12.2 sync.Once"></a>12.2 sync.Once</h2><p>确保某些操作在高并发的场景下<strong>只执行一次</strong>，例如只加载一次配置文件、只关闭一次通道</p>
+<p><strong>sync.Once其实内部包含一个互斥锁和一个布尔值，互斥锁保证布尔值和数据的安全，而布尔值用来记录初始化是否完成。</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(o *Once)</span> <span class="title">Do</span><span class="params">(f <span class="keyword">func</span>()</span>)</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//示例</span></span><br><span class="line"><span class="keyword">var</span> icons <span class="keyword">map</span>[<span class="keyword">string</span>]image.Image</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> loadIconsOnce sync.Once</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">loadIcons</span><span class="params">()</span></span> &#123;</span><br><span class="line">    icons = <span class="keyword">map</span>[<span class="keyword">string</span>]image.Image&#123;</span><br><span class="line">        <span class="string">&quot;left&quot;</span>:  loadIcon(<span class="string">&quot;left.png&quot;</span>),</span><br><span class="line">        <span class="string">&quot;up&quot;</span>:    loadIcon(<span class="string">&quot;up.png&quot;</span>),</span><br><span class="line">        <span class="string">&quot;right&quot;</span>: loadIcon(<span class="string">&quot;right.png&quot;</span>),</span><br><span class="line">        <span class="string">&quot;down&quot;</span>:  loadIcon(<span class="string">&quot;down.png&quot;</span>),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Icon 是并发安全的</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Icon</span><span class="params">(name <span class="keyword">string</span>)</span> <span class="title">image</span>.<span class="title">Image</span></span> &#123;</span><br><span class="line">    loadIconsOnce.Do(loadIcons)</span><br><span class="line">    <span class="keyword">return</span> icons[name]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-3-sync-Map"><a href="#12-3-sync-Map" class="headerlink" title="12.3 sync.Map"></a>12.3 sync.Map</h2><p>Go语言中<strong>内置的map不是并发安全的</strong></p>
+<h3 id="sync-Map-有以下特性："><a href="#sync-Map-有以下特性：" class="headerlink" title="sync.Map 有以下特性："></a>sync.Map 有以下特性：</h3><ul>
+<li><strong>无须初始化，直接声明即可</strong>。</li>
+<li>sync.Map 不能使用 map 的方式进行取值和设置等操作，而是使用 sync.Map 的方法进行调用，<strong>Store 表示存储，Load 表示获取，Delete 表示删除。</strong></li>
+<li><strong>使用 Range 配合一个回调函数进行遍历操作</strong>，通过回调函数返回内部遍历出来的值，Range 参数中回调函数的返回值在需要继续迭代遍历时，返回 true，终止迭代遍历时，返回 false。</li>
+</ul>
+<h3 id="底层原理-1"><a href="#底层原理-1" class="headerlink" title="底层原理"></a>底层原理</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Map <span class="keyword">struct</span> &#123;</span><br><span class="line">    mu Mutex</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 后面是readOnly结构体，依靠map实现，仅仅只用来读</span></span><br><span class="line">    read atomic.Value <span class="comment">// readOnly</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这个map主要用来写的，部分时候也承担读的能力</span></span><br><span class="line">    dirty <span class="keyword">map</span>[<span class="keyword">interface</span>&#123;&#125;]*entry</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 记录自从上次更新了read之后，从read读取key失败的次数，来触发dirty更新到read操作</span></span><br><span class="line">    misses <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> readOnly <span class="keyword">struct</span> &#123;</span><br><span class="line">    m       <span class="keyword">map</span>[<span class="keyword">interface</span>&#123;&#125;]*entry</span><br><span class="line">    <span class="comment">// dirty是否包含m中不存在的key</span></span><br><span class="line">    amended <span class="keyword">bool</span> <span class="comment">// true if the dirty map contains some key not in m.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> entry <span class="keyword">struct</span> &#123;</span><br><span class="line">    p unsafe.Pointer <span class="comment">// *interface&#123;&#125;  执行存储值得地址</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用了两个map，一个叫read，一个叫dirty，两个map存储的都是指针，指向value数据本身，所以两个map是共享value数据的，更新value对两个map同时可见。</p>
+<p>read map 使用 atomic.Value，保证读写操作的原子性</p>
+<p> dirty map 使用 <code>mutex</code>来保护，进行新增一个key进行存储</p>
+<h3 id="结构示意图"><a href="#结构示意图" class="headerlink" title="结构示意图"></a>结构示意图</h3><p>通过上面的结构体，我们可以简单画出来一个结构示意图</p>
+<p><img src="https://segmentfault.com/img/remote/1460000020325766" alt="img"></p>
+<h3 id="Store操作"><a href="#Store操作" class="headerlink" title="Store操作"></a>Store操作</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Map)</span> <span class="title">Store</span><span class="params">(key, value <span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">   read, _ := m.read.Load().(readOnly)</span><br><span class="line">   <span class="keyword">if</span> e, ok := read.m[key]; ok &amp;&amp; e.tryStore(&amp;value) &#123;</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">   &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">// 走到这里有两种情况，</span></span><br><span class="line">	<span class="comment">// 1. key不存在 </span></span><br><span class="line">    <span class="comment">// 2. key对应的值被标记为expunged，read中的entry拷贝到dirty时，会将key标记为expunged，需要手动解锁</span></span><br><span class="line">   m.mu.Lock()</span><br><span class="line">   read, _ = m.read.Load().(readOnly)</span><br><span class="line">   <span class="comment">// read map存在 但是expunged，就先拷贝到dirty map，存储value</span></span><br><span class="line">   <span class="keyword">if</span> e, ok := read.m[key]; ok &#123;</span><br><span class="line">      <span class="keyword">if</span> e.unexpungeLocked() &#123;</span><br><span class="line">         <span class="comment">// The entry was previously expunged, which implies that there is a</span></span><br><span class="line">         <span class="comment">// non-nil dirty map and this entry is not in it.</span></span><br><span class="line">         m.dirty[key] = e</span><br><span class="line">      &#125;</span><br><span class="line">      e.storeLocked(&amp;value)</span><br><span class="line">   <span class="comment">// read map 不存在， dirty map 存在，直接存value</span></span><br><span class="line">   &#125; <span class="keyword">else</span> <span class="keyword">if</span> e, ok := m.dirty[key]; ok &#123;</span><br><span class="line">      e.storeLocked(&amp;value)</span><br><span class="line">   <span class="comment">// read map 不存在， dirty map 也不存在，在dirty新建一个entry存储，并关联read map</span></span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> !read.amended &#123;</span><br><span class="line">         <span class="comment">// We&#x27;re adding the first new key to the dirty map.</span></span><br><span class="line">         <span class="comment">// Make sure it is allocated and mark the read-only map as incomplete.</span></span><br><span class="line">         m.dirtyLocked()</span><br><span class="line">         m.read.Store(readOnly&#123;m: read.m, amended: <span class="literal">true</span>&#125;)</span><br><span class="line">      &#125;</span><br><span class="line">      m.dirty[key] = newEntry(value)</span><br><span class="line">   &#125;</span><br><span class="line">   m.mu.Unlock()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>key原先就存在于read中，获取key所对应内存地址，原子性修改</li>
+<li>key存在，但是key所对应的值被标记为 expunged，解锁，解除标记，并更新dirty中的key，与read中进行同步，然后修改key对应的值</li>
+<li>read中没有key，但是dirty中存在这个key，直接修改dirty中key的值</li>
+<li>read和dirty中都没有值，先判断自从read上次同步dirty的内容后有没有再修改过dirty的内容，没有的话，先同步read和dirty的值，然后添加新的key value到dirty上面</li>
+</ol>
+<h3 id="Load操作"><a href="#Load操作" class="headerlink" title="Load操作"></a>Load操作</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *Map)</span> <span class="title">Load</span><span class="params">(key <span class="keyword">interface</span>&#123;&#125;)</span> <span class="params">(value <span class="keyword">interface</span>&#123;&#125;, ok <span class="keyword">bool</span>)</span></span> &#123;</span><br><span class="line">    read, _ := m.read.Load().(readOnly)</span><br><span class="line">    e, ok := read.m[key]</span><br><span class="line">  <span class="comment">// 如果read的map中没有，且存在修改</span></span><br><span class="line">    <span class="keyword">if</span> !ok &amp;&amp; read.amended &#123;</span><br><span class="line">        m.mu.Lock()</span><br><span class="line">        <span class="comment">// Avoid reporting a spurious miss if m.dirty got promoted while we were</span></span><br><span class="line">        <span class="comment">// blocked on m.mu. (If further loads of the same key will not miss, it&#x27;s</span></span><br><span class="line">        <span class="comment">// not worth copying the dirty map for this key.)</span></span><br><span class="line">    <span class="comment">// 再查找一次，有可能刚刚将dirty升级为read了</span></span><br><span class="line">        read, _ = m.read.Load().(readOnly)</span><br><span class="line">        e, ok = read.m[key]</span><br><span class="line">        <span class="keyword">if</span> !ok &amp;&amp; read.amended &#123;</span><br><span class="line">      <span class="comment">// 如果amended 还是处于修改状态，则去dirty中查找</span></span><br><span class="line">            e, ok = m.dirty[key]</span><br><span class="line">            <span class="comment">// Regardless of whether the entry was present, record a miss: this key</span></span><br><span class="line">            <span class="comment">// will take the slow path until the dirty map is promoted to the read</span></span><br><span class="line">            <span class="comment">// map.</span></span><br><span class="line">      <span class="comment">// 增加misses的计数，在计数达到一定规则的时候，触发升级dirty为read</span></span><br><span class="line">            m.missLocked()</span><br><span class="line">        &#125;</span><br><span class="line">        m.mu.Unlock()</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="comment">// read dirty中都没有找到</span></span><br><span class="line">    <span class="keyword">if</span> !ok &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span>, <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  <span class="comment">// 找到了，通过load判断具体返回内容</span></span><br><span class="line">    <span class="keyword">return</span> e.load()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(e *entry)</span> <span class="title">load</span><span class="params">()</span> <span class="params">(value <span class="keyword">interface</span>&#123;&#125;, ok <span class="keyword">bool</span>)</span></span> &#123;</span><br><span class="line">    p := atomic.LoadPointer(&amp;e.p)</span><br><span class="line">  <span class="comment">// 如果p为nil或者expunged标识，则key不存在</span></span><br><span class="line">    <span class="keyword">if</span> p == <span class="literal">nil</span> || p == expunged &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span>, <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> *(*<span class="keyword">interface</span>&#123;&#125;)(p), <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>read map 没找到,但是为amended 修改状态</p>
+<pre><code> 2.再读一次，看是否dirty更新到read，去read 读
+</code></pre>
+<p>​     3.还是 不存在，修改状态</p>
+<p>​                就去dirty map中读，并增加missed计数，来触发dirty更新到read中操作</p>
+</li>
+<li><p>找不到返回</p>
+</li>
+</ol>
+<h2 id="12-4-sync-Pool"><a href="#12-4-sync-Pool" class="headerlink" title="12.4 sync.Pool"></a>12.4 sync.Pool</h2><p><strong>Pool 是可伸缩、并发安全的临时对象池，用来存放已经分配但暂时不用的临时对象，通过对象重用机制，缓解 GC 压力，提高程序性能。</strong></p>
+<p>适用于<strong>储存一些会在 goroutine 间共享的临时对象</strong>，<strong>其中保存的任何项都可能随时不做通知地释放掉</strong>，所以不适合用于存放诸如 socket 长连接或数据库连接的对象。</p>
+<p><code>New</code>去定义你这个池子里面放的究竟是什么东西，<strong>在这个池子里面你只能放一种类型的东西</strong>。</p>
+<p><code>Get</code>方法从池子里面获取我们之前在New里面定义类型的数据。</p>
+<p><code>Put</code>方法放回去，或者放别的同类型的数据进去。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Pool <span class="keyword">struct</span> &#123;</span><br><span class="line">    noCopy noCopy</span><br><span class="line"></span><br><span class="line">    local     unsafe.Pointer <span class="comment">// local fixed-size per-P pool, actual type is [P]poolLocal</span></span><br><span class="line">    localSize <span class="keyword">uintptr</span>        <span class="comment">// size of the local array</span></span><br><span class="line"></span><br><span class="line">    victim     unsafe.Pointer <span class="comment">// local from previous cycle</span></span><br><span class="line">    victimSize <span class="keyword">uintptr</span>        <span class="comment">// size of victims array</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// New optionally specifies a function to generate</span></span><br><span class="line">    <span class="comment">// a value when Get would otherwise return nil.</span></span><br><span class="line">    <span class="comment">// It may not be changed concurrently with calls to Get.</span></span><br><span class="line">    New <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="title">interface</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Local per-P Pool appendix.</span></span><br><span class="line"><span class="keyword">type</span> poolLocalInternal <span class="keyword">struct</span> &#123;</span><br><span class="line">    private <span class="keyword">interface</span>&#123;&#125; <span class="comment">// Can be used only by the respective P.</span></span><br><span class="line">    shared  poolChain   <span class="comment">// Local P can pushHead/popHead; any P can popTail.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> poolLocal <span class="keyword">struct</span> &#123;</span><br><span class="line">    poolLocalInternal</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Prevents false sharing on widespread platforms with</span></span><br><span class="line">    <span class="comment">// 128 mod (cache line size) = 0 .</span></span><br><span class="line">    pad [<span class="number">128</span> - unsafe.Sizeof(poolLocalInternal&#123;&#125;)%<span class="number">128</span>]<span class="keyword">byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>local</strong>：这里面真正的是[P]poolLocal其中P就是GPM模型中的P，有多少个P数组就有多大，也就是每个P维护了一个本地的poolLocal。</p>
+</li>
+<li><p><strong>poolLocal：</strong>里面维护了<strong>一个private一个shared</strong>，看名字其实就很明显了，private是给自己用的，而shared的是一个队列，可以给别人用的。注释写的也很清楚，<strong>自己可以从队列的头部存然后从头部取，而别的P可以从尾部取</strong>。</p>
+</li>
+<li><p><strong>victim：</strong>这个从字面上面也可以知道，幸存者嘛，<strong>当进行gc的stw时候，会将local中的对象移到victim中去，也就是说幸存了一次gc</strong>，</p>
+</li>
+</ul>
+<h3 id="Get方法"><a href="#Get方法" class="headerlink" title="Get方法"></a>Get方法</h3><ul>
+<li>如果 private 不是空的，那就直接拿来用</li>
+<li>如果 private 是空的，那就先去本地的shared队列里面从头 pop 一个</li>
+<li>如果本地的 shared 也没有了，那 getSlow 去拿，其实就是去别的P的 shared 里面偷，偷不到回去 victim 幸存者里面找</li>
+<li>如果最后都没有，那就只能调用 New 方法创建一个了</li>
+</ul>
+<h3 id="Put方法"><a href="#Put方法" class="headerlink" title="Put方法"></a>Put方法</h3><ul>
+<li>如果 private 没有，就放在 private</li>
+<li>如果 private 有了，那么就放到 shared 队列的头部</li>
+</ul>
+<p><strong>因为init()的时候会注册一个PoolCleanup函数，他会在gc时清除掉sync.Pool中的所有的缓存的对象。所以每个sync.Pool的生命周期为两次GC中间时段才有效，可以手动进行gc操作 runtime.GC()</strong></p>
+<h2 id="12-5-sync-Mutex"><a href="#12-5-sync-Mutex" class="headerlink" title="12.5 sync.Mutex"></a>12.5 sync.Mutex</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Mutex <span class="keyword">struct</span> &#123;</span><br><span class="line">   state <span class="keyword">int32</span>   </span><br><span class="line">   sema  <span class="keyword">uint32</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//state = 0 未加锁   加锁解锁都是通过原子操作进行修改</span></span><br><span class="line"><span class="comment">//sema      信号量   用于等待队列</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="..%5Cassets%5CdaD" alt="image-20210328215039562"></p>
+<h3 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h3><ul>
+<li><p><strong>正常模式</strong> </p>
+<ul>
+<li>高吞吐量，自旋线程会抢锁，挂起唤醒少</li>
+</ul>
+<p>一个尝试加锁的goroutine 会先自旋几次，尝试通过原子操作获得锁；如果几次自旋后无法获得，就会加入到信号量队列，按照FIFO进行排队等待，</p>
+<p>当锁被释放，第一个等待着被唤醒后不会立即获得锁，需要与其他自旋goroutine进行竞争， 因为自旋goroutine运行在cpu上且数量多，更容易获得锁；等待着拿不到锁，会重新插入到队列头部</p>
+</li>
+<li><p><strong>饥饿模式</strong></p>
+<ul>
+<li> 严格按照排队，可以防止尾端延迟（即最后等待队列 goroutine迟迟获得不到锁）</li>
+</ul>
+<p><strong>当goroutine等待加锁的时间超过1ms，Mutex会切换到饥饿模式</strong></p>
+<p>会把执行unlock的goroutine的锁直接传给 等待队列，其他自旋goroutine会加入到等待队列尾部，进行排队</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>饥饿模式 —&gt;  正常模式</strong></p>
+<p>获得锁的goroutine等待时间 小于1ms，</p>
+<p>获得锁的goroutine是等待队列最后一个。   </p>
+</li>
+</ul>
+<h1 id="十三、hash"><a href="#十三、hash" class="headerlink" title="十三、hash"></a>十三、hash</h1><h1 id="十四、Context"><a href="#十四、Context" class="headerlink" title="十四、Context"></a>十四、Context</h1>
+    </div>
+</div>
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 109;
+        width: 600px !important;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            width: 88%
+        }
+    }
+</style>
+<script>
+    $(function () { $('#article').click(function (e) { if (e.target.tagName == "IMG") { if ($('#nonediv').length == 0) { let MImg = `<div id='noneimg'><img src='${e.target.currentSrc}'></div>`; let MDiv = "<div id='nonediv' style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'></div>"; $('#article').append(MDiv); $('#article').append(MImg); $("#nonediv").fadeIn("slow"); $("#noneimg img").fadeIn("slow") } } else { if ($('#nonediv').length !== 0) { $("#noneimg ").fadeOut("slow"); $("#nonediv").fadeOut("slow"); setTimeout(function () { $('#nonediv').remove(); $('#noneimg').remove() }, 500) } } }); $('.article-content').addClass('content-move') });
+</script>
+<div class="Last-Next">
+    
+
+    
+    <a href="/2021/07/18/hello-world/">
+        <div class="next">
+            <span>下一篇</span>
+            <p>Hello World</p>
+        </div>
+    </a>
+    
+</div>
+		
+<link rel="stylesheet" href="/css/food.css">
+
+<div class="footer">
+	<div class="Copyright">
+		©2021 By WAMiii. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/qiaobug/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/qiaobug">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: block;
+            border-radius: 50%;
+            width: 66px;
+            height: 66px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            transition: border .5s;
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 30px;
+            height: 30px;
+            margin-top: 17.5px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $('#js-go_top').gotoTop({ offset: 500, speed: 300, animationShow: { 'transform': 'translate(0,0)', 'transition': 'transform .5s ease-in-out' }, animationHide: { 'transform': 'translate(100px,0)', 'transition': 'transform .5s ease-in-out' } });
+</script>
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/QiaoBug/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+
+</html>
